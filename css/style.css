@@ -1,0 +1,456 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 80%;
+    margin: auto;
+    font-family: 'Corben', cursive;
+}
+/* Header */
+.header-container{
+    padding-top: 40px;
+}
+.header-content{
+    width: 100%;
+    padding: 0 20px;
+    height: 85px;
+    margin: auto;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(248, 216, 222);
+}
+.user-icon{
+   font-size: 25px;
+   padding: 0 10px;
+   position: relative;
+}
+.num{
+    position: absolute;
+    font-size: 12px;
+    top:15px;
+    background-color: rgb(247, 97, 122);
+    padding: 4px;
+    border-radius: 50%;
+}
+.cart{
+    font-size: 18px;
+}
+.header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+}
+.header .main{
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 2px 9px;
+    margin-left:5px;
+    text-decoration: none;
+    position: relative;
+    color: #233540;
+    word-spacing: 2px;
+}
+nav .mega-menu .shop-list a{
+    text-decoration: none;
+}
+nav .header li .main::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    top:0;
+    left:0;
+    background-color: rgb(247, 121, 142);
+    transition: 0.2s;
+    transition-delay: 0.2s;
+}
+nav .header li .main::before{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    left:0;
+    bottom:-2px;
+    background-color: rgb(247, 121, 142);
+    transition: 0.2s;
+    transition-delay: 0.2s;
+    }
+nav .header li .main:hover::after,
+nav .header li .main:hover::before{
+    width: 100%;
+}
+.main span::before,
+.main span::after{
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 0px;
+  background: transparent;
+  transition: 0.2s;
+}
+.main span::before {
+    bottom: -2px;
+    left: 0px;
+    border-left: 2px solid rgb(247, 121, 142);
+  }
+.main span::after {
+    bottom: -2px;
+    right: -2px;
+    border-right: 2px solid rgb(247, 121, 142);
+  }
+.main:hover span::before,
+.main:hover span::after  {
+  width: 100%;
+  height: 105%;
+}
+.mega-menu{
+    position: absolute;
+    top:125px;
+    width:50%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.15 , 0.15);
+    transition: all 1s;
+    z-index: 9999;
+}
+nav .header .shop-a:hover .mega-menu{
+    visibility: visible;
+    z-index: 9999;
+    transform: scale(1 , 1);
+    opacity: 1;
+}
+.shop-list a{color: #233540; }
+.shop-list li{
+    list-style: none;
+}
+.mega-menu-content{
+    background-color: rgb(248, 216, 222);
+    padding:25px 25px;
+    padding-right: 100px;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+}
+.column{
+    line-height: 40px;}
+.list-title{
+    font-size: 20px;
+    border-bottom: 3px dotted gray;
+    font-weight: 700;
+}
+/* Main Section */
+.main-container{
+    width: 100%;
+    height: 700px;
+    background-image: url(../images/front-view-bouquet-flowers-vase.jpg);
+    background-size:100% 100%;
+    position: relative;
+    margin-bottom: 70px;
+}
+.main-content{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    top: 25%;
+    left:7%
+}
+.main-h1{
+    color: rgb(247, 121, 142);
+    font-size: 65px;
+    margin-bottom: 60px;
+    text-transform: capitalize;
+}
+.main-btn{
+    font-size: 18px;
+    height: 40px;
+    width: 120px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(247, 179, 191);
+    border-radius: 3px;
+    transition: 1s;
+    border: none;
+}
+.main-btn:hover{
+    color: white;
+    background: rgb(247, 121, 142);
+}
+/* Categories */
+.category-container{
+    width: 100%;
+    margin-bottom: 70px;
+}
+.category-header{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    margin-bottom: 30px;
+}
+.category-heading{
+   font-size: 35px;
+   color: rgb(104, 104, 104);
+   margin-bottom: 10px;
+}
+.category-line{
+    display: block;
+    width: 200px;
+    height: 3px;
+    margin: auto;
+    background-color: rgb(247, 121, 142);
+    transition: width 0.4s;
+}
+.category-header:hover .category-line{
+    width: 280px;
+}
+.category-items{
+    display: grid;
+    grid-template-columns: repeat(4 , 25%);
+}
+.category-item{
+    position: relative;
+    line-height: 25px;
+}
+.icon{
+    font-size: 25px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 2px 5px;
+    background-color: rgb(247, 121, 142);
+    visibility: hidden;
+}
+.category-item:hover .icon{
+    visibility: visible;
+}
+.category-img{
+    width:100%;
+    margin-bottom: 20px;
+}
+.category-item-h3{
+    font-size: 15px;
+    color: rgb(104, 104, 104);
+}
+/* Why Choose Marvellous */
+.why-container{
+    display: flex;
+    margin-bottom: 70px;
+    height: 350px;
+}
+.why-textside{
+    flex:2;
+    background-color: rgb(248, 216, 222);
+    padding: 0 20px;
+}
+.textside-top{
+    position: relative;
+    padding-left: 60px;
+    padding-top: 15px;
+    margin-bottom: 30px;
+}
+.why-icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 60px;
+    color: rosybrown;
+}
+.why-name{
+    color: rgb(104, 104, 104);
+}
+
+.textside-p{
+    line-height: 30px;
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+.dashes{
+    display: flex;
+    justify-content:flex-end;
+    text-align: flex-end;
+    padding-bottom: 60px;
+}
+.dash{
+    width: 60px;
+    height: 2px;
+    background-color: rgb(247, 121, 142);
+    margin-left: 10px;
+}
+.why-item{
+    flex: 1;
+    padding: 25px 30px;
+    line-height: 25px;
+    transition: transform 0.5s;
+}
+.why-item1{
+    background-image: url(../images/antique-pastel-beauty-bouquet-blue.jpg);
+    background-size: 100% 100%;
+    margin: 0 40px;
+}
+.why-item2{
+    background-image: url(../images/front-view-female-hand-holding-bouquet-flowers.jpg);
+    background-size: cover;
+}
+.why-item-h4{
+    font-size: 23px;
+    color: rgb(247, 97, 122);
+    font-weight: 700;
+}
+.why-item-h3{
+    font-size: 22px;
+    color: rgb(247, 121, 142);
+}
+.why-item:hover{
+    transform: scale(1.1 , 1.1);
+}
+/* Icons Section */
+.icons-parent{
+    display: grid;
+    grid-template-columns: repeat(5 , 20%);
+    text-align: center;
+    margin-bottom: 50px;
+}
+.icon-h4{
+    font-size: 16px;
+}
+.icon-h5{
+    font-size: 17px;
+}
+.icon-item{
+    border-right: 2px solid rgb(247, 121, 142);
+}
+.icon-div{
+    margin-bottom: 15px;
+}
+.iconn{
+    font-size: 45px;
+    color: rgb(247, 176, 189);
+    /* display: block;
+    transition: 0.5s; */
+}
+.icon-div:hover .iconn{
+    animation-name: icon-in;
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+}
+@keyframes icon-in{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+        color: rgb(247, 176, 189);
+    }
+    15%{
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+    50%{
+        transform: translatey(-35px);
+        
+    }
+    75%{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    76%{
+        transform: translateY(25px);
+    opacity: 1;
+}
+    100%{
+        transform: translatey(0);
+        opacity: 1;
+        color: rgb(247, 121, 142);
+    }
+}
+hr{
+    height: 3px;
+    background-color: rgb(247, 121, 142);
+    margin-bottom: 70px;
+}
+/* Featured Products */
+.products{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 70px;
+}
+.products-heading{
+    text-align: center;
+}
+.prod-line{
+    display: block;
+    margin: auto;
+    width: 120px;
+    height: 3px;
+    background-color: rgb(247, 121, 142);
+    transition: width 0.5s;
+    margin-bottom: 30px;
+}
+.prod-h2{
+    font-size: 35px;
+    color: rgb(104, 104, 104);
+}
+.products-heading:hover .prod-line{
+    width: 180px;
+}
+.products-types{
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.type-h{
+    font-size: 18px;
+}
+.product-items-parent{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-gap: 50px 30px;
+}
+.item-img , .item-img2{
+    width: 100%;
+}
+.product-img{
+    position: relative;
+    margin-bottom:15px ;
+}
+.img-2nd{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scalex(0);
+    transition: transform 0.5s;
+    opacity: 0.9;
+}
+.product-img:hover .img-2nd{
+    transform: scaleX(1);
+}
+.prod-icons{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50% , -50%);
+}
+.prod-icon{
+    font-size: 20px;
+    color: white;
+    background-color: rgb(247, 121, 142);
+    padding: 10px;
+}
+.product-info{
+    line-height: 25px;
+}
+.star-icon{
+    color: yellow;
+    font-size: 17px;
+}
+.flowers-name{
+    font-size: 19px;
+}
+.price{
+    color: rgb(247, 97, 122);
+}
